@@ -65,8 +65,8 @@ class Rectangle:
         """Returning the greater area between rectangles.
 
         Args:
-            rect_1 (Rectangle): The first rectangle.
-            rect_2 (Rectangle): The second rectangle.
+            rect_1 (Rectangle): The 1st rectangle.
+            rect_2 (Rectangle): The 2nd rectangle.
         Raises:
             TypeError: If either rect_1 or rect_2 is not a rectangle.
         """
@@ -77,7 +77,7 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return (rect_1)
         return (rect_2)
-    
+
     def __str__(self):
         """Returning the printable, representations of the Rectangle.
 
