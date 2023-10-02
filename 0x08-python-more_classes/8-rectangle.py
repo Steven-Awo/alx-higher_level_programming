@@ -65,10 +65,10 @@ class Rectangle:
         """Returning the greater area between rectangles.
 
         Args:
-            rect_1 (Rectangle): The 1st rectangle.
-            rect_2 (Rectangle): The 2nd rectangle.
+            rect_1 (Rectangle): The first rectangle.
+            rect_2 (Rectangle): The second rectangle.
         Raises:
-            TypeError: If either of rect_1 or the rect_2 is not a Rectangle.
+            TypeError: If either rect_1 or rect_2 is not a rectangle.
         """
         if isinstance(rect_1, Rectangle) is not True:
             raise TypeError("rect_1 must be an instance of Rectangle")
