@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# 101-lazy_matrix_mul.py
 """Defining a matrix of multiplication function using the NumPy."""
 import numpy as np
 
