@@ -1,0 +1,28 @@
+How to Use the say_my_name() Function
+The say_my_name() function prints a person's name.
+
+Usage
+To use the say_my_name() function, simply pass it the person's first name as an argument. You can optionally provide a last name as well.
+
+Here are some examples of how to use the say_my_name() function:
+
+python
+say_my_name("Brennan", "Baraban")
+
+
+Output:
+
+My name is Brennan Baraban
+
+
+```python
+say_my_name("Cornelius Maxwell", "Jones II")
+Output:
+
+My name is Cornelius Maxwell Jones II
+Examples
+Here are some examples of how to use the say_my_name() function in real-world applications:
+
+You could use the say_my_name() function to greet users when they log in to your website or app.
+You could use the say_my_name() function to introduce speakers at a conference or event.
+You could use the say_my_name() function to create personalized videos for your customers.

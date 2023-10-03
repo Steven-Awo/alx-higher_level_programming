@@ -1,0 +1,40 @@
+User Guide for Text Indentation Function
+
+This module provides a function to apply text indentation based on specific characters.
+
+Usage
+=====
+
+The function ``text_indentation(text)`` formats the text by adding two new lines after each occurrence of the characters '.', '?', and ':'.
+
+Example Usage
+-------------
+
+```python
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
+
+>>> text_indentation("   Hi there.")
+Hi there.
+<BLANKLINE>
+Note: No spaces are added at the beginning or end of a line.
+
+Handling Invalid Inputs
+The function validates the input to ensure proper functionality.
+
+Invalid Text
+The parameter text must be a string. If not, a TypeError is raised.
+
+>>> text_indentation(7)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({"one": 1, "two": 2})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string

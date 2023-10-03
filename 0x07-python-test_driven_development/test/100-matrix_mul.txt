@@ -1,0 +1,80 @@
+User Guide for Matrix Multiplication Function
+
+This module provides a function to multiply two matrices: ``matrix_mul(m_a, m_b)``.
+
+Usage
+=====
+
+``matrix_mul(...)`` returns a new matrix resulting from the multiplication of matrices ``m_a`` and ``m_b``.
+
+Example Usage
+-------------
+
+```python
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> m_a = [
+... [1, 2],
+... [3, 4],
+... ]
+>>> m_b = m_a
+>>> print(matrix_mul(m_a, m_b))
+[[7, 10], [15, 22]]
+
+Note: The function also handles floating-point numbers.
+
+Handling Invalid Inputs
+The function validates inputs to ensure proper functionality and raises appropriate errors for invalid cases.
+
+ValueErrors
+The function raises a ValueError if the matrices cannot be multiplied due to mismatched dimensions.
+
+>>> m_a = [
+... [1, 2],
+... [3, 4],
+... ]
+>>> m_b = [
+... [1, 2],
+... [2, 3],
+... [4, 5]
+... ]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+ValueError: matrices m_a and m_b can't be multiplied
+TypeError Handling
+The function raises a TypeError for various invalid cases, including non-list inputs, non-list of lists, and non-integer/non-float elements.
+
+For example:
+>>> print(matrix_mul("not a list", [[1, 2]]))
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+>>> print(matrix_mul([[1, 2]], "also not a list"))
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+>>> print(matrix_mul(None, None))
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+>>> print(matrix_mul([[1, "non-number"]], [[3, 4]]))
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+>>> print(matrix_mul([[1, "non-number"]], [[{"a": 1}, 8.8]]))
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+Other Error Handling
+The function also handles cases where a minimum of two arguments must be provided, and when either m_a or m_b is empty.
+
+For example:
+>>> print(matrix_mul()) # Missing arguments
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+>>> print(matrix_mul([], [[1, 2]])) # Empty matrix
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+>>> print(matrix_mul([[]], [])) # Empty matrix
+Traceback (most recent call last):
+ValueError: m_a can't be empty

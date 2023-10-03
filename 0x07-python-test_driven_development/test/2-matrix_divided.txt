@@ -1,0 +1,20 @@
+User Guide for Matrix Division Function
+
+This module provides a function to divide a matrix by a given value.
+
+Usage
+=====
+
+The function ``matrix_divided(matrix, div)`` divides each element in the matrix by the given ``div`` value.
+
+Example Usage
+-------------
+
+```python
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+>>> print(matrix_divided(matrix, 3))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]

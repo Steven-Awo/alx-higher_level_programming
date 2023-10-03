@@ -1,0 +1,57 @@
+How to use print_square.py
+
+This module defines a function called print_square()
+
+Usage
+
+To print a square, simply call the print_square() function with the desired size as the argument. For example, to print a square with a side length of 5, you would call the function as follows:
+
+python
+print_square(5)
+
+
+This would print the following output to the console:
+
+"
+#####
+#####
+#####
+#####
+#####
+Invalid sizes
+
+The print_square() function only accepts integers as the size argument. If a non-integer value is passed to the function, a TypeError exception will be raised. Additionally, the size argument cannot be less than zero. If a negative value is passed to the function, a ValueError exception will be raised.
+
+Examples
+
+Here are some examples of how to use the print_square() function:
+
+Python
+# Print a square with a side length of 1.
+print_square(1)
+
+# Print a square with a side length of 4.
+print_square(4)
+
+# Print a square with a side length of 10.
+print_square(10)
+
+# Print nothing.
+print_square(0)
+Use code with caution. Learn more
+Error handling
+
+If the print_square() function is called with an invalid argument, it will raise an exception. The following table shows the types of exceptions that can be raised by the function:
+
+Exception	Cause
+TypeError	The size argument is not an integer.
+ValueError	The size argument is less than zero.
+You can handle these exceptions in your code by using a try/except block. For example, the following code will print a message to the console if the print_square() function raises an exception:
+
+Python
+try:
+  print_square(5)
+except (TypeError, ValueError) as e:
+  print(e)
+Use code with caution. Learn more
+This code will print the following output to the console:
