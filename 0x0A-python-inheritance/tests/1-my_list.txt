@@ -9,7 +9,7 @@ case 0: import
 
 ---------------------------------------
 
-case 1: Ascending order case
+case 1: ascending order case
 
 >>> my_list = MyList()
 >>> my_list.append(1)
@@ -100,10 +100,10 @@ case 8: the negative numbers
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
 >>> my_list.append(5)
->>> my_list.append(51)
 >>> my_list.append(1)
 >>> my_list.append(-1)
 >>> my_list.append(-5)
+>>> my_list.append(51)
 >>> my_list.print_sorted()
-[-5, 51, -1, 1, 5]
+[-5, -1, 1, 5, 51]
 >>>
