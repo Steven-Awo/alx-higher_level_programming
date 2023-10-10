@@ -1,4 +1,3 @@
-guillaume@ubuntu:~/0x0B$ cat 5-main.py
 #!/usr/bin/python3
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
