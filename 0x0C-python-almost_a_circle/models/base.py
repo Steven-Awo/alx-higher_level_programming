@@ -17,8 +17,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_of_dictionaries):
-        '''Jsonifies a dictionary so that it's quite it rightly and
-        also longer.'''
+        '''Jsonifies a dictionary so that it's quite longer and right.'''
         if list_of_dictionaries == None or not list_of_dictionaries:
             return "[]"
         else:
