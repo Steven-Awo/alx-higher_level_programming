@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-'''Module for the class called Square class.'''
+'''Module for Square class.'''
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    '''Representing of a Square class.'''
+    '''A Square class.'''
 
     def __init__(self, size, x=0, y=0, id=None):
-        '''Initializing a new size, x, y and id.'''
+        '''Constructor.'''
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        '''Returning the info about the square as a string.'''
+        '''Returns string info about this square.'''
         return '[{}] ({}) {}/{} - {}'.\
-            format(type(self).__name__, self.id, self.x, self.y, self.height)
+            format(type(self).__name__, self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
-        '''Square's size.'''
-        return self.height
+        '''Size of this square.'''
+        return self.width
 
     @size.setter
     def size(self, value):
-        self.height = value
         self.width = value
+        self.height = value
