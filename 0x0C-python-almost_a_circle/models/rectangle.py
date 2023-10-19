@@ -10,8 +10,8 @@ class Rectangle(Base):
         '''Initializing a new width, height, x, y and id.'''
         super().__init__(id)
         self.width = width
-        self.x = x
         self.height = height
+        self.x = x
         self.y = y
 
     @property
