@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Module for Base class.'''
+'''Defining the class called Base class.'''
 
 
 class Base:
