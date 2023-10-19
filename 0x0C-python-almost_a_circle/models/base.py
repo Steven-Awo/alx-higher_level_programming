@@ -24,11 +24,11 @@ class Base:
             return dumps(list_of_dictionaries)
 
     @classmethod
-    def load_from_file(cls):
-        '''Loads the string from the filee and the unjsonifies.'''
-        from os import path
-        filee = "{}.json".format(cls.__name__)
-        if not path.isfile(filee):
-            return []
-        with open(filee, "r", encoding="utf-8") as f:
-            return [cls.create(**e) for e in cls.from_json_string(f.read())]
+    def save_to_file_csv(clss, list_of_objs):
+        '''Saves the object to the csv file.'''
+        if list_of_objs != None:
+            list_of_objs = [[p.id, p.width, p.height, p.x, p.y]
+                             for p in list_of_objs]
+        with open('{}.csv'.format(clss.__name__), 'w', newline='',
+                  encoding='utf-8') as f:
+            f.write(clss.to_json_string(list_of_objs))
