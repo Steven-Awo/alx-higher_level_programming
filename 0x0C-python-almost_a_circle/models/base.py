@@ -24,9 +24,9 @@ class Base:
             return dumps(list_of_dictionaries)
 
     @classmethod
-    def save_to_file_csv(clss, list_of_objs):
+    def save_to_file(cls, list_of_objs):
         '''Saves the object to the csv file.'''
         if list_of_objs != None:
             list_of_objs = [p.to_dictionary() for p in list_of_objs]
-        with open("{}.json".format(clss.__name__), 'w', encoding='utf-8') as f:
-            f.write(clss.to_json_string(list_of_objs))
+        with open("{}.json".format(cls.__name__), 'w', encoding='utf-8') as f:
+            f.write(cls.to_json_string(list_of_objs))
