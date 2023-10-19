@@ -6,7 +6,11 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''Constructor.'''
+        """Initialization of the neww Base.
+
+        Args:
+            id (int): The neww base identity.
+        """
         if id != None:
             self.id = id
         else:
