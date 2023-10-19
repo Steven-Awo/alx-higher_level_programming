@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Defining a class called base model."""
+"""Module for the class base model."""
 
 class Base:
     """the Base model.
-    Private Class Attributes:
+    Attributes:
         __nb_object (int): Number of instantiated Bases.
     """
 
