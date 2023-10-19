@@ -30,3 +30,9 @@ class Base:
             list_of_objs = [p.to_dictionary() for p in list_of_objs]
         with open("{}.json".format(cls.__name__), 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(list_of_objs))
+    @staticmethod
+    def from_json_string(json_str):
+        '''Unjsonifies thats in a dictionary.'''
+        if json_str == None or not json_str:
+            return []
+        return loads(json_str)
