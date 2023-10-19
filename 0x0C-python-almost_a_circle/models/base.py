@@ -57,7 +57,7 @@ class Base:
         '''Loads the string from the file and the unjsonifies.'''
         from os import path
         filee = "{}.json".format(clss.__name__)
-        if path.isfile(filee) is not True:
+        if not path.isfile(filee):
             return []
         with open(filee, "r", encoding="utf-8") as f:
             return [clss.create(**e) for e in clss.from_json_string(f.read())]
