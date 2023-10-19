@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""Defining a class called base model."""
 
 class Base:
-    """Defining a class called base model."""
+    """the Base model.
+    Private Class Attributes:
+        __nb_object (int): Number of instantiated Bases.
+    """
 
     __nb_objects = 0
 
