@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-'''Defining the class called Square class.'''
+'''Module for the class called Square class.'''
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    '''Representing of the square class.'''
+    '''Representing of a Square class.'''
 
     def __init__(self, size, x=0, y=0, id=None):
         '''Initializing a  size, x, y and id'''
@@ -14,3 +14,13 @@ class Square(Rectangle):
         '''Returning the info about the square as a string.'''
         return '[{}] ({}) {}/{} - {}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        '''Square's size.'''
+        return self.height
+
+    @size.setter
+    def size(self, value):
+        self.height = value
+        self.width = value
