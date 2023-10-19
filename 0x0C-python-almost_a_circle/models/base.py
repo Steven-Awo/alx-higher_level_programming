@@ -51,3 +51,13 @@ class Base:
             neww = None
         neww.update(**dictionaryy)
         return neww
+
+    @classmethod
+    def load_from_file(clss):
+        '''Loads the string from the filee and the unjsonifies.'''
+        from os import path
+        filee = "{}.json".format(clss.__name__)
+        if path.isfile(filee) is not True:
+            return []
+        with open(filee, "r", encoding="utf-8") as f:
+            return [clss.create(**e) for e in clss.from_json_string(f.read())]
