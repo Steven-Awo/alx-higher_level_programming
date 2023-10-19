@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 '''Defining the class called Base class.'''
+from json import dumps, loads
 
 
 class Base:
@@ -13,3 +14,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''Unjsonifies thats in a dictionary.'''
+        if json_string == None or not json_string:
+            return []
+        return loads(json_string)
