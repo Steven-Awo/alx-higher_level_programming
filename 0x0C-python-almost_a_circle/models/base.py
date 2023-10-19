@@ -3,12 +3,12 @@
 
 
 class Base:
-    '''A representation of the base of our OOP hierarchy.'''
+    '''Representation of a base of our own OOP hierarchy.'''
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''Constructor.'''
+        '''Initializing a new id.'''
         if id is not None:
             self.id = id
         else:
