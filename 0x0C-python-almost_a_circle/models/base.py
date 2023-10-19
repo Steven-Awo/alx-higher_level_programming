@@ -23,9 +23,12 @@ class Base:
         else:
             return dumps(list_of_dictionaries)
 
-    @staticmethod
-    def from_json_string(json_string):
-        '''Unjsonifies thats in a dictionary.'''
-        if json_string == None or not json_string:
+    @classmethod
+    def load_from_file(cls):
+        '''Loads the string from the filee and the unjsonifies.'''
+        from os import path
+        filee = "{}.json".format(cls.__name__)
+        if not path.isfile(filee):
             return []
-        return loads(json_string)
+        with open(filee, "r", encoding="utf-8") as f:
+            return [cls.create(**e) for e in cls.from_json_string(f.read())]
