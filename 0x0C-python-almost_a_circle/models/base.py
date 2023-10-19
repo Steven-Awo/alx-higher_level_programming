@@ -27,8 +27,6 @@ class Base:
     def save_to_file_csv(clss, list_of_objs):
         '''Saves the object to the csv file.'''
         if list_of_objs != None:
-            list_of_objs = [[p.id, p.width, p.height, p.x, p.y]
-                             for p in list_of_objs]
-        with open('{}.csv'.format(clss.__name__), 'w', newline='',
-                  encoding='utf-8') as f:
+            list_of_objs = [p.to_dictionary() for p in list_of_objs]
+        with open("{}.json".format(clss.__name__), 'w', encoding='utf-8') as f:
             f.write(clss.to_json_string(list_of_objs))
