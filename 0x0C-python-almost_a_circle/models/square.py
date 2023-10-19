@@ -38,7 +38,7 @@ class Square(Rectangle):
             self.y = y
 
     def update(self, *args, **kwargs):
-        '''Updating the instance's attributes via the no-keyword & the
+        '''Updating the instance'ss attributes via the no-keyword & the
         keyword args.'''
         if args:
             self.__update(*args)
