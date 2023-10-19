@@ -21,7 +21,12 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.validating_int("width", value, False)
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        if not isinstance(value, int) and value <= 0:
+            raise ValueError("y must be > 0")
         self.__width = value
 
     @property
@@ -31,7 +36,12 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.validating_int("height", value, False)
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        if not isinstance(value, int) and value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -41,7 +51,12 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.validating_int("x", value, False)
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        if not isinstance(value, int) and value <= 0:
+            raise ValueError("x must be > 0")
         self.__x = value
 
     @property
@@ -51,14 +66,10 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validating_int("y", value, False)
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        if not isinstance(value, int) and value <= 0:
+            raise ValueError("y must be > 0")
         self.__y = value
-
-    def validating_int(self, name, value, eqq=True):
-        '''Method for validating the value.'''
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if eqq and value < 0:
-            raise ValueError("{} must be >= 0".format(name))
-        elif not eqq and value <= 0:
-            raise ValueError("{} must be > 0".format(name))
