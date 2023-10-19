@@ -16,52 +16,52 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        '''rectangle's width.'''
+        '''Rectangle's width.'''
         return self.__width
 
     @width.setter
     def width(self, value):
-        if isinstance(value, int) is not True:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value < 0 or value == 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
     def height(self):
-        '''rectangle's height.'''
+        '''Rectangle's height.'''
         return self.__height
 
     @height.setter
     def height(self, value):
-        if isinstance(value, int) is not True:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if value < 0 and value == 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
     @property
     def x(self):
-        '''rectangle's x.'''
+        '''Rectangle's x.'''
         return self.__x
 
     @x.setter
     def x(self, value):
-        if isinstance(value, int) is not True:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        if value < 0 and value == 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
-        '''rectangle's y.'''
+        '''Rectangle's y.'''
         return self.__y
 
     @y.setter
     def y(self, value):
-        if isinstance(value, int) is not True:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        if value < 0 and value == 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
