@@ -89,3 +89,25 @@ class Rectangle(Base):
         return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width,
                    self.height)
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        '''Internal's method that updates the instance's attributes
+        via */**args.'''
+        if id != None:
+            self.id = id
+        if width != None:
+            self.width = width
+        if height != None:
+            self.height = height
+        if x != None:
+            self.x = x
+        if y != None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        '''Updating the instance's attributes via the no-keyword & the keyword
+        args.'''
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
