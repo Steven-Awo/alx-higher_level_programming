@@ -73,3 +73,7 @@ class Rectangle(Base):
         if not isinstance(value, int) and value <= 0:
             raise ValueError("y must be > 0")
         self.__y = value
+
+    def area(self):
+        """Returning the calculated area of the Rectangle."""
+        return (self.__height * self.__width)
