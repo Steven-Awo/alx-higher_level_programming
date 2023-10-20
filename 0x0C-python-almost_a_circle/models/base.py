@@ -61,3 +61,40 @@ class Base:
             return []
         with open(filee, "r", encoding="utf-8") as f:
             return [clss.create(**e) for e in clss.from_json_string(f.read())]
+
+    @classmethod
+    def save_to_file_csv(clss, list_of_objs):
+        '''Saving the object to the file called csv.'''
+        from models.square import Square
+        from models.rectangle import Rectangle
+        if list_of_objs != None:
+            if clss is Rectangle:
+                list_of_objs = [[p.id, p.width, p.height, p.x, p.y]
+                             for p in list_of_objs]
+            else:
+                list_of_objs = [[p.id, p.size, p.x, p.y]
+                             for p in list_of_objs]
+        with open('{}.csv'.format(clss.__name__), 'w', newline='',
+                  encoding='utf-8') as f:
+            writter = csv.writer(f)
+            writter.writerows(list_of_objs)
+
+    @classmethod
+    def load_from_file_csv(clss):
+        '''Load the object tothe file called csv.'''
+        from models.rectangle import Rectangle
+        from models.square import Square
+        retrns = []
+        with open('{}.csv'.format(clss.__name__), 'q', newline='',
+                  encoding='utf-8') as f:
+            readerr = csv.reader(f)
+            for roww in readerr:
+                roww = [int(q) for q in roww]
+                if clss is Rectangle:
+                    e = {"id": roww[0], "width": roww[1], "height": roww[2],
+                         "x": roww[3], "y": roww[4]}
+                else:
+                    e = {"id": roww[0], "size": roww[1],
+                         "x": roww[2], "y": roww[3]}
+                retrns.append(clss.create(**e))
+        return retrns
