@@ -554,7 +554,7 @@ given"
         self.assertEqual(str(rr1), "[Rectangle] (89) 4/5 - 2/3")
 
     def testing_M_too_dictionaryy(self):
-        '''Testing the to_dictionary() signature:'''
+        '''Testing the to_dictionary()'s signature:'''
         with self.assertRaises(TypeError) as e:
             Rectangle.to_dictionary()
         ss = "to_dictionary() missing 1 required positional argument: 'self'"
