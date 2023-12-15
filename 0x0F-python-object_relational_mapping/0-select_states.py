@@ -10,7 +10,7 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     currt = dtb.cursor()
     currt.execute("SELECT * FROM states")
-    rowws = curr.fetchall()
+    rowws = currt.fetchall()
     for one_row in rowws:
         print(one_row)
     currt.close()
