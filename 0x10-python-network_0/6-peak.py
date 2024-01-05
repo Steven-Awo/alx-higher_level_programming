@@ -5,7 +5,7 @@
 def find_peak(list_of_ints):
     """Finding the peak in the list_of_ints"""
 
-    if list_of_ints == None or list_of_ints == []:
+    if list_of_ints is None or list_of_ints == []:
         return None
     lowr = 0
     higr = len(list_of_ints)
