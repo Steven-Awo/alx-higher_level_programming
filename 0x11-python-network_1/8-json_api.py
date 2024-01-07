@@ -10,15 +10,15 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    letterr = "" if len(sys.argv) == 1 else sys.argv[1]
-    payyloadr = {"q": letterr}
+    letteerr = "" if len(sys.argv) == 1 else sys.argv[1]
+    payyloadr = {"q": letteerr}
 
     rqts = requests.post("http://0.0.0.0:5000/search_user", data=payyloadr)
     try:
-        responsesr = rqts.json()
-        if responsesr == {}:
+        responsesrs = rqts.json()
+        if responsesrs == {}:
             print("No result")
         else:
-            print("[{}] {}".format(responsesr.get("id"), responsesr.get("name")))
+            print("[{}] {}".format(responsesrs.get("id"), responsesrs.get("name")))
     except ValueError:
         print("Not a valid JSON")
