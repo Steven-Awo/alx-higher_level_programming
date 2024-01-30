@@ -1,27 +1,25 @@
 #!/usr/bin/node
 
-const request = require('request');
+const req = require('request');
 
-const urll = process.argv[2];
+const id = process.argv[2];
 
-request(urll, function (err, response, body) {
-  if (err) {
-    console.log(err);
-  } else if (response.statusCode === 200) {
-    const complteted = {};
-    const tassks = JSON.parse(body);
-    for (const x in tassks) {
-      const taskk = tassks[x];
-      if (taskk.complteted === true) {
-        if (complteted[taskk.userId] === undefined) {
-          complteted[taskk.userId] = 1;
-        } else {
-          complteted[taskk.userId]++;
-        }
+const url = 'https://swapi-api.hbtn.io/api/films/';
+
+req.get(url + id, function (error, res, body) {
+  if (error) {
+    console.log(error);
+  }
+  const data = JSON.parse(body);
+  const dd = data.characters;
+  for (const i of dd) {
+    req.get(i, function (error, res, body1) {
+      if (error) {
+        console.log(error);
       }
-    }
-    console.log(complteted);
-  } else {
-    console.log('An error occured. Status code: ' + response.statusCode);
+      const data1 = JSON.parse(body1);
+      console.log(data1.name);
+    });
   }
 });
+
