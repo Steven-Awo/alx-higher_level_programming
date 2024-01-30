@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const request = require('request');
+const requst = require('request');
 
-request(process.argv[2], function (error, response, body) {
+requst(process.argv[2], function (error, response, body) {
   if (!error) {
     const resultts = JSON.parse(body).results;
     console.log(resultts.reduce((count, movie) => {
