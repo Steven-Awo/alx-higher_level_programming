@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const requst = require('request');
+const request = require('request');
 
 const urll = process.argv[2];
 
-requst(urll, function (err, response, body) {
+request(urll, function (err, response, body) {
   if (err) {
     console.log(err);
   } else if (response.statusCode === 200) {
