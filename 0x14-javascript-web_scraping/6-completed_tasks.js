@@ -4,12 +4,11 @@ const requst = require('request');
 
 const urrl = process.argv[2];
 
-requst(urrl, function (errr, response, body) {
-  if (errr) {
-    console.log(errr);
+requst(urrl, function (err, response, body) {
+  if (err) {
+    console.log(err);
   } else if (response.statusCode === 200) {
     const complleted = {};
-
     const taskss = JSON.parse(body);
     for (const x in taskss) {
       const tassk = taskss[x];
